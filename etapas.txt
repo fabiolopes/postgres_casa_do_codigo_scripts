@@ -1,0 +1,3 @@
+CAP-03
+*Deletaremos a tabela comissoes, para criarmos separadamente a tabela e suas
+constraints.
