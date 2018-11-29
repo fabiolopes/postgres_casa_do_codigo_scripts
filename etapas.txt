@@ -1,3 +1,4 @@
 CAP-03
 *Deletaremos a tabela comissoes, para criarmos separadamente a tabela e suas
 constraints.
+*Criamos sequences e associamos às suas tabelas sendo seu ids incrementados por nextval('minha_seq').

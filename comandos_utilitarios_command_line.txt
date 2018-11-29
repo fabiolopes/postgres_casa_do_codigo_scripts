@@ -1,0 +1,11 @@
+--Ver quais bancos existentes
+\l
+
+--selecionar banco de dados
+\c nome_do_banco
+
+--listar tabelas de um banco. (executar após selecionar o banco)
+\dt
+
+--verificar estrutura da tabela, como colunas, tipos e constraints
+\d nome_tabela
