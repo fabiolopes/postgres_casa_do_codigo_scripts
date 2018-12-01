@@ -1,0 +1,1 @@
+alter table itens_vendas RENAME column data_atuaizacao TO data_atualizacao;
