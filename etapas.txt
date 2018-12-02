@@ -2,3 +2,15 @@ CAP-03
 *Deletaremos a tabela comissoes, para criarmos separadamente a tabela e suas
 constraints.
 *Criamos sequences e associamos às suas tabelas sendo seu ids incrementados por nextval('minha_seq').
+
+CAP-04
+*Criação da 1a function
+*$$ é limitador de corpo de uma function
+*declarações de variáveis dentro do declare no padrão nome_variavel tipo_dado;
+*início e fim com begin end; ifs da seguinte forma:
+if condicao then
+    lalala
+else
+    lelele
+end if
+*execução da function através de select minha_function; 
