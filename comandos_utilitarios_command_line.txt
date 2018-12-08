@@ -9,3 +9,59 @@
 
 --verificar estrutura da tabela, como colunas, tipos e constraints
 \d nome_tabela
+
+
+--insert suco de limão
+insert into produtos(produto_codigo,
+					produto_nome,
+					produto_valor,
+					produto_situacao,
+					data_criacao,
+					data_atualizacao)
+VALUES
+	('2832',
+	'SUCO DE LIMÃO',
+	15,
+	'C',
+	'02/02/2018',
+	'02/02/2018');
+
+--Selecionar todos os produtos que não sã SUCO DE LIMÃO. cláusula 'not'
+select * from produtos where not
+produto_nome = 'SUCO DE LIMÃO';
+
+--soma de todas as vendas até ontem
+select sum(venda_total) from vendas where data_criacao > now();
+
+--funções para string
+--Função com máximo de caracteres em um nome de funcionario
+select max(length(funcionario_nome)) 
+				  from funcionarios;
+--Nome com letras iniciais maiúsculas
+--upper ou lower				  
+select initcap(funcionario_nome) from funcionarios;
+
+select count(id) from funcionarios;
+select sum(venda_total) from vendas;
+--média do valor dos produtos
+select avg(produto_valor) from produtos;
+--máximo e mínimo dos produtos
+select max(produto_valor), min(produto_valor) from produtos;
+
+--agrupar o total de cada produto vendido
+select produto_id, sum(item_total) from itens_vendas
+group by produto_id;
+
+--query após criaçao da function que retorna o nome do produto
+select retorna_nome_produto(produto_id), sum(item_total)
+from itens_vendas group by produto_id;
+
+--query com cláusula having
+select retorna_nome_produto(produto_id) PRODUTO, 
+		count(item_total) total_produto 
+from itens_vendas
+--agrupamento pelo produto_id
+group by produto_id 
+--todos os registros da seleção com count >=2
+having count(produto_id) >=2
+order by total_produto, PRODUTO;
